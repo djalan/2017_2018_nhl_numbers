@@ -3,9 +3,10 @@ require 'fileutils'
 
 # 3;Alex Ovechkin;Capitals;WSH;L;48;32;24;56;64;24;88;9538462;1
 # 38;P.K. Subban;Canadiens;MTL;D;42;11;27;38;33;54;87;2875000;2
+#File.open(File.expand_path('2017_2018_nhl.csv')) do |file|
 
 def go
-  File.open(File.expand_path('2016_2017_nhl.csv')) do |file|
+  File.open(File.expand_path('601_625.csv')) do |file|
     file.each_line do |line|
       l = line.split(';') #attention a la virgule entre les teams MTL,SJS
       p = Player.new
@@ -26,7 +27,7 @@ def go
       p.rank = l[13]
       p.drafted = 'no'
       p.color = 'white'
-      p.season = '2016-2017'
+      p.season = '2017-2018'
 
       printf("%-25s %s\n", p.name, p.valid?) unless p.valid?
       p.save

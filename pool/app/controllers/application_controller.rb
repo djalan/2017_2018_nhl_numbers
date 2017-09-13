@@ -8,10 +8,11 @@ class ApplicationController < ActionController::Base
     #@year = '2013-2014'
     #@year = '2014-2015'
     #@year = '2015-2016'
-    @year = '2016-2017'
+    #@year = '2016-2017'
+    @year = '2017-2018'
     
     @mode = 'prep'
-    @mode = 'draft'
+    #@mode = 'draft'
     
     case @year
     when '2014-2015'
@@ -25,6 +26,9 @@ class ApplicationController < ActionController::Base
       
     when '2016-2017'
       @teams = %W{ANA ARI BOS BUF CGY CAR CHI COL CLB DAL DET EDM FLA LAK MIN MTL NAS NJD NYI NYR OTT PHI PIT SJS STL TBL TOR VAN WAS WPG}
+      
+    when '2017-2018'
+      @teams = %W{ANA ARI BOS BUF CGY CAR CHI COL CLB DAL DET EDM FLA LAK MIN MTL NAS NJD NYI NYR OTT PHI PIT SJS STL TBL TOR VAN WAS WPG}  
     end
   end
 end
